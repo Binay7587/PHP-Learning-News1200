@@ -11,3 +11,5 @@
     define('DB_USER', 'root');
     define('DB_PWD', 'sandesh123');
     define('DB_NAME', 'news_1200');
+
+    define('ERROR_LOG', $_SERVER['DOCUMENT_ROOT'].'/error/error.log');
