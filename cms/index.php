@@ -1,7 +1,16 @@
 <?php  
 require '../config/init.php';
 $title = "Login || Admin, News 1200";
-require 'inc/header.php'; ?>
+require 'inc/header.php'; 
+
+if(isset($_SESSION, $_SESSION['token']) && !empty($_SESSION['token'])){
+    redirect('dashboard.php','success', 'You are already logged in.');
+}
+
+if(isset($_COOKIE, $_COOKIE['_au']) && !empty($_COOKIE['_au'])){
+    redirect('dashboard.php','success', 'Welcome back to admin panel.');
+}
+?>
     <div class="container">
         <div class="row">
             <div class="col-md-4 col-md-offset-4">

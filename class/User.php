@@ -19,4 +19,27 @@
             );
             return $this->select($args);
         }
+
+        public function updateUser($data, $user_id){
+            $args = array(
+                'where' => array(
+                    'id' => $user_id
+                )
+            );
+            $success = $this->update($data, $args);
+            if($success){
+                return $user_id;
+            } else {
+                return false;
+            }
+        }
+
+        public function getUserByToken($token){
+            $args = array(
+                'where' => array(
+                    'remember_token' => $token
+                )
+            );
+            return $this->select($args);
+        }
     }

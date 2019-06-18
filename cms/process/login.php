@@ -18,9 +18,19 @@
                         $_SESSION['user_id'] = $user_info[0]->id;
                         $_SESSION['name'] = $user_info[0]->name;
                         $_SESSION['email'] = $user_info[0]->email;
-                        
+                        $token = getRandomString(100);
+                        $_SESSION['token'] = $token;
 
-                        // Cookie
+                        $data = array(
+                            'last_ip' => $_SERVER['REMOTE_ADDR'],
+                            'last_login' => date('Y-m-d H:i:s')
+                        );
+                        if(isset($_POST['remember']) && !empty($_POST['remember'])){
+                            setcookie('_au',$token, time()+8640000, '/');
+                            $data['remember_token'] = $token;
+                        }
+
+                        $user->updateUser($data, $user_info[0]->id);
                         
                         redirect('../dashboard.php', 'success', 'Welcome to admin panel.');
                     } else {

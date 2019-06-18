@@ -41,3 +41,53 @@ function flash(){
         unset($_SESSION['warning']);
     }
 }
+
+function getRandomString($len =100){
+    $chars = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    $str_leng = strlen($chars); // length of $chars
+    $random = '';
+
+    for($i=0; $i <$len; $i++){
+        $posn = rand(0, $str_leng-1);
+        $random .= $chars[$posn];
+    }
+    return $random;
+
+}
+
+function sanitize($str){
+    // mysqli_real_escape_string($str); 
+    $str = strip_tags($str);
+    $str = rtrim($str);
+    return $str;
+}
+
+function uploadSingleImage($file, $dir){
+    if($file['error'] == 0){
+        $ext = pathinfo($file['name'], PATHINFO_EXTENSION);
+        if(in_array($ext, IMAGE_EXTENSIONS)){
+            if($file['size'] <= 5000000){
+                $path = UPLOAD_DIR.'/'.$dir;
+
+                if(!is_dir($path)){
+                    mkdir($path, 777,true);
+                }
+
+                $file_name = ucfirst($dir)."-".date('Ymdhis').rand(0,999).".".$ext;
+
+                $succss = move_uploaded_file($file['tmp_name'], $path.'/'.$file_name);
+                if($succss){
+                    return $file_name;
+                } else {
+                    return false;
+                }
+            } else {
+                return null;
+            }
+        } else {
+            return null;
+        }
+    } else {
+        return null;
+    }
+}

@@ -20,3 +20,9 @@
     define('ADMIN_ASSETS', CMS_URL.'/assets');
     define('ADMIN_CSS', ADMIN_ASSETS.'/css');
     define('ADMIN_JS', ADMIN_ASSETS.'/js');
+
+
+    define('IMAGE_EXTENSIONS', array('jpg','jpeg','png','bmp','svg'));
+    define('UPLOAD_DIR', $_SERVER['DOCUMENT_ROOT'].'/uploads');
+
+    define('UPLOAD_URL', SITE_URL.'/uploads');
