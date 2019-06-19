@@ -42,4 +42,14 @@
             );
             return $this->select($args);
         }
+
+
+        public function getAllReporter(){
+            // SELECT * FROM users WHERE role = 'reporter'
+            $args = array(
+                'where' => array('role'=>'reporter'),
+                'order_by' => ' name ASC'
+            );
+            return $this->select($args);
+        }
     }

@@ -44,7 +44,7 @@
                 </li>
 
                 <li>
-                    <a href="">
+                    <a href="news.php">
                         <i class="fa fa-newspaper"></i>
                         News Management
                     </a>
