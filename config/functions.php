@@ -70,7 +70,7 @@ function uploadSingleImage($file, $dir){
                 $path = UPLOAD_DIR.'/'.$dir;
 
                 if(!is_dir($path)){
-                    mkdir($path, 777,true);
+                    mkdir($path, 0777,true);
                 }
 
                 $file_name = ucfirst($dir)."-".date('Ymdhis').rand(0,999).".".$ext;
@@ -90,4 +90,20 @@ function uploadSingleImage($file, $dir){
     } else {
         return null;
     }
+}
+
+function getYoutubeIdFromUrl($url){
+    // preg_match("/^(?:http(?:s)?:\/\/)?(?:www\.)?(?:m\.)?(?:youtu\.be\/|youtube\.com\/(?:(?:watch)?\?(?:.*&)?v(?:i)?=|(?:embed|v|vi|user)\/))([^\?&\"'>]+)/", $url, $match);
+
+    preg_match("#([\/|\?|&]vi?[\/|=]|youtu\.be\/|embed\/)([a-zA-Z0-9_-]+)#", $url, $matches);
+    return $matches[2];
+}
+
+
+function getCurrentUrl(){
+    return SITE_URL.$_SERVER['REQUEST_URI'];
+}
+
+function getPagename(){
+    return pathinfo($_SERVER['PHP_SELF'], PATHINFO_FILENAME);
 }

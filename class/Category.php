@@ -44,4 +44,14 @@
 
             return $this->update($data, $args);
         }
+
+        public function getMenuCategory(){
+            $args = array(
+                'where' => array(
+                    'status' => 'active'
+                ),
+                'order_by'  => 'title ASC'
+            );
+            return $this->select($args);
+        }
     }

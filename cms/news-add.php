@@ -216,3 +216,12 @@ if(isset($_GET, $_GET['id']) && !empty($_GET['id'])){
     <!-- /#wrapper -->
 
 <?php require 'inc/footer.php';?>
+<script src="<?php echo ADMIN_ASSETS;?>/tinymce/tinymce.min.js"></script>
+<script>
+    tinymce.init({
+        selector: "#description",
+        plugins: 'print preview searchreplace autolink directionality  visualblocks visualchars fullscreen image link media template codesample table charmap hr pagebreak nonbreaking anchor toc insertdatetime advlist lists wordcount  imagetools textpattern help ',
+        toolbar: 'formatselect | bold italic strikethrough forecolor backcolor permanentpen formatpainter | link image media pageembed | alignleft aligncenter alignright alignjustify  | numlist bullist outdent indent | removeformat | addcomment',
+  
+    })
+</script>

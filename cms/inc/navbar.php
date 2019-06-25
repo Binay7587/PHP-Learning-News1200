@@ -51,14 +51,14 @@
                 </li>
 
                 <li>
-                    <a href="">
+                    <a href="gallery.php">
                         <i class="fa fa-images"></i>
                         Gallery Management
                     </a>
                 </li>
 
                 <li>
-                    <a href="">
+                    <a href="video.php">
                         <i class="fa fa-video"></i>
                         Video Management
                     </a>
