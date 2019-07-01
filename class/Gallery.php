@@ -15,6 +15,14 @@
             return $this->select();
         }
 
+        public function getGallery($limit){
+            $args = array(
+                'where' => "status = 'active'",
+                'order_by' => 'id DESC',
+                'limit' =>  '0, '.$limit
+            );
+            return $this->select($args);
+        }
         public function getGalleryById($id){
             $args = array(
                 'where' => array(

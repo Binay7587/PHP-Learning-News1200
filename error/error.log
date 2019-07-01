@@ -7,3 +7,6 @@
 2019-06-21 12:48 PM: Select (PDO), (SELECT  *  FROM video ORDER BY video.id DESC )SQLSTATE[42S02]: Base table or view not found: 1146 Table 'news_1200.video' doesn't exist
 2019-06-21 12:49 PM: Update (PDO), (INSERT INTO  videos SET title = :_title, summary = :_summary, status = :_status, video_link = :_video_link, added_by = :_added_by, video_id = :_video_id)SQLSTATE[42S22]: Column not found: 1054 Unknown column 'summary' in 'field list'
 2019-06-23 12:57 PM: Select (PDO), (SELECT  *  FROM categories WHERE status = :status ORDER BY name ASC)SQLSTATE[42S22]: Column not found: 1054 Unknown column 'name' in 'order clause'
+2019-06-26 12:51 PM: Select (PDO), (SELECT news.*, users.name FROM news WHERE news.id = 74 ORDER BY news.id DESC )SQLSTATE[42S22]: Column not found: 1054 Unknown column 'users.name' in 'field list'
+2019-06-26 12:51 PM: Select (PDO), (SELECT news.*, users.name FROM news WHERE news.id = 74 ORDER BY news.id DESC )SQLSTATE[42S22]: Column not found: 1054 Unknown column 'users.name' in 'field list'
+2019-06-26 12:53 PM: Select (PDO), (SELECT news.*, users.name FROM news  WHERE news.id = 74 ORDER BY news.id DESC )SQLSTATE[42S22]: Column not found: 1054 Unknown column 'users.name' in 'field list'

@@ -65,6 +65,9 @@
                 $this->sql .= $this->table;
                 
                 // Join statement
+                if(isset($args['join']) && !empty($args['join'])){
+                    $this->sql .= " ".$args['join'];
+                }
                 // Join statement
 
                 // Where condition

@@ -20,7 +20,7 @@ function redirect($path, $session_key=null, $session_msg=null){
 
 function setFlash($key, $message){
     if(!isset($_SESSION)){
-        session-start();
+        session_start();
     }
     $_SESSION[$key] = $message;
 }

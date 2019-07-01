@@ -14,6 +14,18 @@
             return $this->select();
         }
 
+        public function getVideos($limit){
+            $args = array(
+                'where' => array(
+                    'status' => 'active'
+                ),
+                'order_by' => 'id DESC',
+                'limit' => ' 0, '.$limit
+            );
+
+            return $this->select($args);
+        }
+
         public function getVideoById($id){
             $args = array(
                 'where' => array(

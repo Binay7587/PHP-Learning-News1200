@@ -20,7 +20,9 @@
     <link rel="stylesheet" type="text/css" media="screen" href="<?php echo CSS_URL;?>/main.css" />
 </head>
 <body>
-    <header class="main-head">
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.3&appId=679395169166871&autoLogAppEvents=1"></script>
+<header class="main-head">
 
         <div class="container">
             <div class="logo">
