@@ -4,6 +4,11 @@
 
     define('SITE_URL', $_SERVER['REQUEST_SCHEME'].'://'.$_SERVER['HTTP_HOST']); // http://localhost
     
+
+    // dir_name
+    // /htdocs
+    // 
+    
     define('CMS_URL', SITE_URL.'/cms');
 
 
@@ -34,3 +39,6 @@
 
 
     define('SITE_TITLE','News1200, an online newsportal website from Nepal.');
+
+    define('CONFIG_PATH', $_SERVER['DOCUMENT_ROOT'].'/config/');
+    define('CLASS_PATH',$_SERVER['DOCUMENT_ROOT'].'/class/');
